@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Send, Mail, MessageSquare, Star, Heart, Phone, MapPin, Clock } from 'lucide-react';
+import { Send, Mail, MessageSquare, Star, Heart, Phone, MapPin, Clock, Trophy, Users, Award, Zap, BookOpen } from 'lucide-react';
 
 const Contact = () => {
   const { language } = useLanguage();
@@ -90,6 +89,74 @@ const Contact = () => {
       role: { en: 'AI Developer', bn: 'এআই ডেভেলপার' },
       avatar: '🤖',
       specialty: { en: 'AI Tools', bn: 'এআই টুলস' }
+    }
+  ];
+
+  const communityStats = [
+    { icon: '👥', count: '50K+', label: { en: 'Community Members', bn: 'কমিউনিটি সদস্য' } },
+    { icon: '💌', count: '5K+', label: { en: 'Messages Received', bn: 'বার্তা পেয়েছি' } },
+    { icon: '⭐', count: '4.9', label: { en: 'Average Rating', bn: 'গড় রেটিং' } },
+    { icon: '🚀', count: '99%', label: { en: 'Response Rate', bn: 'উত্তরের হার' } }
+  ];
+
+  const successStories = [
+    {
+      name: 'Ahmad Karim',
+      story: { 
+        en: 'My joke got featured and reached 10K people!', 
+        bn: 'আমার জোক ফিচার হয়ে ১০ হাজার মানুষের কাছে পৌঁছেছে!' 
+      },
+      achievement: { en: 'Viral Content Creator', bn: 'ভাইরাল কন্টেন্ট ক্রিয়েটর' },
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop'
+    },
+    {
+      name: 'Fatima Sheikh',
+      story: { 
+        en: 'Won the monthly meme contest twice!', 
+        bn: 'মাসিক মিম প্রতিযোগিতায় দুইবার জিতেছি!' 
+      },
+      achievement: { en: 'Contest Champion', bn: 'প্রতিযোগিতার চ্যাম্পিয়ন' },
+      avatar: 'https://images.unsplash.com/photo-1494790108755-2616c96ff8ae?w=60&h=60&fit=crop'
+    },
+    {
+      name: 'Rashid Khan',
+      story: { 
+        en: 'My game idea was implemented by the team!', 
+        bn: 'আমার গেমের আইডিয়া টিম বাস্তবায়ন করেছে!' 
+      },
+      achievement: { en: 'Innovation Partner', bn: 'ইনোভেশন পার্টনার' },
+      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop'
+    }
+  ];
+
+  const supportChannels = [
+    {
+      channel: { en: 'Live Chat', bn: 'লাইভ চ্যাট' },
+      availability: { en: '24/7 Available', bn: '২৪/৭ উপলব্ধ' },
+      response: { en: 'Instant', bn: 'তৎক্ষণাৎ' },
+      icon: '💬',
+      color: 'bg-green-100 text-green-600'
+    },
+    {
+      channel: { en: 'Email Support', bn: 'ইমেইল সাপোর্ট' },
+      availability: { en: 'Always Open', bn: 'সর্বদা খোলা' },
+      response: { en: '2-4 hours', bn: '২-৪ ঘন্টা' },
+      icon: '📧',
+      color: 'bg-blue-100 text-blue-600'
+    },
+    {
+      channel: { en: 'Phone Support', bn: 'ফোন সাপোর্ট' },
+      availability: { en: 'Mon-Fri 9AM-6PM', bn: 'সোম-শুক্র ৯-৬' },
+      response: { en: 'Immediate', bn: 'সাথে সাথে' },
+      icon: '📞',
+      color: 'bg-purple-100 text-purple-600'
+    },
+    {
+      channel: { en: 'Community Forum', bn: 'কমিউনিটি ফোরাম' },
+      availability: { en: 'Always Active', bn: 'সর্বদা সক্রিয়' },
+      response: { en: '1-2 hours', bn: '১-২ ঘন্টা' },
+      icon: '👥',
+      color: 'bg-yellow-100 text-yellow-600'
     }
   ];
 
@@ -248,7 +315,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-pink-50 py-8">
       <div className="container mx-auto px-4">
-        {/* Header */}
+        {/* Section 1: Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
             📬 Contact & Submit
@@ -261,7 +328,20 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Contact Info Cards */}
+        {/* Section 2: Community Statistics */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {communityStats.map((stat, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300">
+                <div className="text-3xl mb-2">{stat.icon}</div>
+                <div className="text-2xl font-bold text-gray-800 mb-1">{stat.count}</div>
+                <div className="text-gray-600 text-sm">{stat.label[language]}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 3: Contact Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {contactInfo.map((info, index) => {
             const IconComponent = info.icon;
@@ -283,7 +363,35 @@ const Contact = () => {
           })}
         </div>
 
-        {/* Form Section */}
+        {/* Section 4: Support Channels */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center space-x-2">
+              <Zap className="text-yellow-500" size={32} />
+              <span>{language === 'bn' ? '🚀 সাপোর্ট চ্যানেল' : '🚀 Support Channels'}</span>
+            </h2>
+            <p className="text-gray-600">
+              {language === 'bn' 
+                ? 'তোমার সুবিধামতো যোগাযোগের মাধ্যম বেছে নাও!'
+                : 'Choose your preferred way to get in touch with us!'
+              }
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {supportChannels.map((channel, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300">
+                <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full ${channel.color} text-2xl mb-4`}>
+                  {channel.icon}
+                </div>
+                <h3 className="font-bold text-gray-800 mb-2">{channel.channel[language]}</h3>
+                <p className="text-gray-600 text-sm mb-1">{channel.availability[language]}</p>
+                <p className="text-purple-600 font-semibold text-sm">{channel.response[language]} response</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 5: Form Section */}
         <div className="max-w-4xl mx-auto mb-12">
           {/* Form Type Selector */}
           <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -307,7 +415,48 @@ const Contact = () => {
           {renderForm()}
         </div>
 
-        {/* Team Section */}
+        {/* Section 6: Success Stories */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 mb-4 flex items-center justify-center space-x-2">
+              <Trophy className="text-yellow-500" size={32} />
+              <span>{language === 'bn' ? '🏆 সফলতার গল্প' : '🏆 Success Stories'}</span>
+            </h2>
+            <p className="text-gray-600">
+              {language === 'bn' 
+                ? 'যারা আমাদের সাথে যুক্ত হয়ে সফল হয়েছেন তাদের গল্প!'
+                : 'Stories of those who achieved success by joining us!'
+              }
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {successStories.map((story, index) => (
+              <div key={index} className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="flex items-center mb-4">
+                  <img
+                    src={story.avatar}
+                    alt={story.name}
+                    className="w-12 h-12 rounded-full object-cover mr-4"
+                  />
+                  <div>
+                    <h4 className="font-bold text-gray-800">{story.name}</h4>
+                    <span className="bg-yellow-100 text-yellow-600 px-2 py-1 rounded text-xs font-semibold">
+                      {story.achievement[language]}
+                    </span>
+                  </div>
+                </div>
+                <p className="text-gray-700 italic mb-4">"{story.story[language]}"</p>
+                <div className="flex justify-center">
+                  <button className="text-purple-600 hover:text-purple-700 font-medium">
+                    {language === 'bn' ? 'পুরো গল্প পড়ো' : 'Read Full Story'}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 7: Team Section */}
         <div className="max-w-6xl mx-auto mb-12">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
@@ -347,7 +496,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* FAQ Section */}
+        {/* Section 8: FAQ Section */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="text-center mb-8">
@@ -375,6 +524,10 @@ const Contact = () => {
                 {
                   q: { en: 'How often do you add new content?', bn: 'তুমি কত ঘন ঘন নতুন কন্টেন্ট যোগ করো?' },
                   a: { en: 'We add new jokes, games, and features every week based on your suggestions!', bn: 'আমরা তোমাদের পরামর্শের ভিত্তিতে প্রতি সপ্তাহে নতুন জোকস, গেম এবং ফিচার যোগ করি!' }
+                },
+                {
+                  q: { en: 'Can I win prizes for my submissions?', bn: 'আমার জমা দেওয়া কন্টেন্টের জন্য কি পুরস্কার পেতে পারি?' },
+                  a: { en: 'Absolutely! We run monthly contests with amazing prizes for the best submissions.', bn: 'অবশ্যই! আমরা সেরা জমা দেওয়া কন্টেন্টের জন্য মাসিক প্রতিযোগিতা এবং দুর্দান্ত পুরস্কার দিয়ে থাকি।' }
                 }
               ].map((faq, index) => (
                 <div key={index} className="border-l-4 border-purple-500 pl-6">
