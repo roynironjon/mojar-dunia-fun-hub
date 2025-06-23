@@ -61,24 +61,24 @@ const Home = () => {
 
   const testimonials = [
     {
-      name: 'রাহুল আহমেদ',
+      name: 'Roy N',
       role: 'Student',
       comment: 'এই সাইটটি সত্যিই অসাধারণ! প্রতিদিন নতুন কিছু শিখছি।',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
       rating: 5
     },
     {
-      name: 'সারা খান',
+      name: 'Nipa Roy',
       role: 'Teacher',
       comment: 'My students love the educational games here!',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616c96ff8ae?w=80&h=80&fit=crop',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
       rating: 5
     },
     {
-      name: 'আর্নব রায়',
+      name: 'রায়',
       role: 'Parent',
       comment: 'Perfect platform for kids entertainment and learning.',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop',
+      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
       rating: 5
     }
   ];
