@@ -60,28 +60,49 @@ const Home = () => {
   ];
 
   const testimonials = [
-    {
-      name: 'Roy N',
-      role: 'Student',
-      comment: 'এই সাইটটি সত্যিই অসাধারণ! প্রতিদিন নতুন কিছু শিখছি।',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
-      rating: 5
-    },
-    {
-      name: 'Nipa Roy',
-      role: 'Teacher',
-      comment: 'My students love the educational games here!',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
-      rating: 5
-    },
-    {
-      name: 'রায়',
-      role: 'Parent',
-      comment: 'Perfect platform for kids entertainment and learning.',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop',
-      rating: 5
-    }
-  ];
+  {
+    name: 'Roy N',
+    role: 'Student',
+    comment: 'এই সাইটটি সত্যিই অসাধারণ! প্রতিদিন নতুন কিছু শিখছি।',
+    avatar: '/images/nroy.jpg',
+    rating: 5
+  },
+  {
+    name: 'N Roy',
+    role: 'Teacher',
+    comment: 'My students love the educational games here!',
+    avatar: '/images/nroy.jpg',
+    rating: 5
+  },
+  {
+    name: 'রায়',
+    role: 'Parent',
+    comment: 'Perfect platform for kids entertainment and learning.',
+    avatar: '/images/nroy.jpg',
+    rating: 5
+  },
+  {
+    name: 'Farhana Sultana',
+    role: 'Teacher',
+    comment: 'The learning materials are well-structured and very engaging.',
+    avatar: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=80&h=80&fit=crop',
+    rating: 5
+  },
+  {
+    name: 'Hasan Ali',
+    role: 'Guardian',
+    comment: 'My child spends time learning instead of just watching videos. Great job!',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop',
+    rating: 5
+  },
+  {
+    name: 'Ruma Akter',
+    role: 'Student',
+    comment: 'I love the quizzes and interactive stories. They’re fun!',
+    avatar: 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop',
+    rating: 5
+  }
+];
 
   const popularContent = [
     {
